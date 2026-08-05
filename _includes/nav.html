@@ -4,6 +4,10 @@
       <img src="/assets/img/darkhorse-badge-512.png" alt="DarkHorse Robotics badge">
       <span>DARKHORSE</span>
     </div>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <label for="nav-toggle" class="nav-burger" aria-label="Open menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </label>
     <ul>
       <li><a href="/#season">Season</a></li>
       <li><a href="/#schedule">Schedule</a></li>
@@ -13,3 +17,15 @@
     <a class="cta" href="/#sponsors">Support the team</a>
   </nav>
 </header>
+<script>
+  document.addEventListener('click', function (e) {
+    var t = document.getElementById('nav-toggle');
+    if (t && t.checked && e.target.closest('nav a')) t.checked = false;
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && e.target.classList && e.target.classList.contains('nav-burger')) {
+      var t = document.getElementById('nav-toggle');
+      t.checked = !t.checked;
+    }
+  });
+</script>
