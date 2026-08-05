@@ -76,8 +76,22 @@
     padding: 1.1rem 0;
     border-bottom: 1px solid var(--hairline);
   }
-  .mark { display: flex; align-items: center; gap: 0.9rem; }
-  .mark img { width: 54px; height: 54px; }
+  .mark { display: flex; align-items: center; gap: 0.9rem; position: relative; }
+  .mark img {
+    height: 78px; width: auto;
+    margin: -8px 0 -22px;   /* the horse leans out of the header frame */
+    position: relative; z-index: 2;
+    filter: drop-shadow(0 6px 14px rgba(3, 8, 20, 0.55));
+  }
+  /* the eye's laser, continuing from the baked streak to underline the wordmark */
+  .mark::after {
+    content: ""; position: absolute;
+    left: 54px; top: 17px; right: -46px; height: 2px;
+    background: linear-gradient(90deg, rgba(255, 59, 46, 0.95), rgba(255, 59, 46, 0.28) 62%, transparent);
+    box-shadow: 0 0 7px rgba(255, 59, 46, 0.55);
+    z-index: 0; pointer-events: none;
+  }
+  .mark-text { position: relative; z-index: 1; }
   .mark-text { display: flex; flex-direction: column; }
   .mark-name { margin-bottom: 0.22rem; }
   .mark-name {
@@ -104,6 +118,8 @@
   @media (max-width: 760px) {
     nav { flex-wrap: wrap; gap: 1rem; }
     nav ul, nav > .cta { display: none; }
+    .mark img { height: 64px; margin: -6px 0 -16px; }
+    .mark::after { left: 45px; top: 15px; right: 0; }
     .nav-burger {
       display: flex; flex-direction: column; justify-content: center; gap: 5px;
       margin-left: auto; width: 40px; height: 40px; padding: 8px;
