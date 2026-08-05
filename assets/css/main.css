@@ -78,7 +78,8 @@
   }
   .mark { display: flex; align-items: center; gap: 0.9rem; }
   .mark img { width: 54px; height: 54px; }
-  .mark-text { display: flex; flex-direction: column; gap: 0.18rem; }
+  .mark-text { display: flex; flex-direction: column; }
+  .mark-name { margin-bottom: 0.22rem; }
   .mark-name {
     font-family: Jost, sans-serif; font-weight: 700;
     letter-spacing: 0.3em; font-size: 1.02rem; line-height: 1;
