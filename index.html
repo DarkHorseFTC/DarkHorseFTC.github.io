@@ -1,75 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DarkHorse Robotics</title>
-  <meta name="description" content="DarkHorse Robotics — FIRST Tech Challenge team at Meridian Creek Middle School, Wilsonville, Oregon.">
-  <link rel="icon" type="image/png" href="darkhorse-badge.png">
-  <style>
-    :root { color-scheme: dark; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(ellipse at 50% 38%, #1c2b44 0%, #0d1626 55%, #070d18 100%);
-      color: #dee5ee;
-      font-family: "Avenir Next", Avenir, Futura, "Helvetica Neue", Arial, sans-serif;
-      text-align: center;
-    }
-    main { padding: 3rem 1.5rem; max-width: 40rem; }
-    img.badge { width: min(320px, 70vw); height: auto; }
-    h1 {
-      margin-top: 1.75rem;
-      font-size: clamp(1.6rem, 5vw, 2.4rem);
-      letter-spacing: 0.18em;
-      font-weight: 700;
-    }
-    p.sub {
-      margin-top: 0.75rem;
-      font-size: clamp(0.85rem, 2.5vw, 1rem);
-      letter-spacing: 0.06em;
-      color: #8fa0b5;
-    }
-    blockquote {
-      margin: 2rem auto 0;
-      font-style: italic;
-      color: #b8c4d4;
-      font-size: clamp(0.9rem, 2.8vw, 1.05rem);
-      line-height: 1.6;
-    }
-    blockquote b { color: #dee5ee; }
-    p.soon {
-      margin-top: 2.5rem;
-      font-size: 0.85rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: #6c7d93;
-    }
-    footer {
-      margin-top: 3rem;
-      font-size: 0.7rem;
-      color: #4d5c70;
-      line-height: 1.5;
-    }
-  </style>
-</head>
-<body>
-  <main>
-    <img class="badge" src="darkhorse-badge.png" alt="DarkHorse Robotics badge">
-    <h1>DARKHORSE ROBOTICS</h1>
-    <p class="sub">FIRST&reg; Tech Challenge &middot; Meridian Creek Middle School &middot; Wilsonville, Oregon</p>
-    <blockquote>
-      <b>dark horse</b> <i>/noun/</i> &mdash; a competitor about whom little is known,
-      who unexpectedly wins.
-    </blockquote>
-    <p class="soon">Season 2026&ndash;27 &middot; Site under construction</p>
-    <footer>
-      FIRST&reg; and FIRST&reg; Tech Challenge are trademarks of FIRST (firstinspires.org).<br>
-      Student-run team; content reflects the team, not FIRST or the WLWV School District.
-    </footer>
-  </main>
-</body>
-</html>
+---
+layout: shell
+title: DarkHorse Robotics
+---
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <span class="label">FIRST&reg; Tech Challenge &middot; Meridian Creek Middle School</span>
+      <h1 style="margin-top:1rem">This season, the <span class="hive">hive</span> has a dark&nbsp;horse.</h1>
+      <p class="def"><b>dark horse</b> /noun/ — a competitor about whom little is known, who unexpectedly wins.</p>
+      <div class="actions">
+        <a class="cta" href="#season">Meet BIOBUZZ&trade;</a>
+        <a class="cta ghost" href="#schedule">Season schedule</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="/assets/img/darkhorse-badge-512.png" alt="DarkHorse Robotics — armored robot horse badge">
+    </div>
+  </div>
+
+  <section id="season">
+    <div class="sec-head">
+      <span class="label">The 2026–27 Game</span>
+      <h2>BIOBUZZ&trade; presented by RTX</h2>
+    </div>
+    <div class="season">
+      <div class="season-card">
+        <img src="/assets/img/biobuzz-lockup.png" alt="Official BIOBUZZ presented by RTX game logo with FIRST Tech Challenge lockup">
+      </div>
+      <div class="season-copy">
+        <p>Every FIRST&reg; Tech Challenge season is a brand-new game, revealed to every team
+           on Earth at the same moment. This year the field turns into a hive: robots collect
+           and score <b style="color:var(--ink)">Pollen</b>, and the swarm that works together sweetest, wins.</p>
+        <div class="hex-facts">
+          <div class="hex-fact"><span class="hex"></span><div><b>Reveal: Sept 12, 8 AM.</b> <span>We watch the broadcast together, then read the manual the same day.</span></div></div>
+          <div class="hex-fact"><span class="hex"></span><div><b>Robot from scratch.</b> <span>Designed, built, and programmed in Java by 6th–8th graders.</span></div></div>
+          <div class="hex-fact"><span class="hex"></span><div><b>Home field.</b> <span>League meets run in the Meridian Creek gym — come watch.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule">
+    <div class="sec-head">
+      <span class="label">Where we'll be</span>
+      <h2>Season schedule</h2>
+    </div>
+    <div class="sched">
+      <div class="sched-row"><span class="date">SEP 12</span><div class="what"><b>FTC Kickoff — BIOBUZZ reveal</b><span>Location TBD</span></div><span class="chip out">Season start</span></div>
+      <div class="sched-row"><span class="date">SEP 19</span><div class="what"><b>FirstFare coaches &amp; team conference</b><span>Portland State University</span></div><span class="chip out">Training</span></div>
+      <div class="sched-row"><span class="date">OCT 24</span><div class="what"><b>League Meet 0</b><span>Meridian Creek Middle School</span></div><span class="chip">We host</span></div>
+      <div class="sched-row"><span class="date">NOV 14</span><div class="what"><b>League Meet 1</b><span>Meridian Creek Middle School</span></div><span class="chip">We host</span></div>
+      <div class="sched-row"><span class="date">DEC 12</span><div class="what"><b>League Meet 2</b><span>Meridian Creek Middle School</span></div><span class="chip">We host</span></div>
+      <div class="sched-row"><span class="date">JAN 9</span><div class="what"><b>League Meet 3</b><span>Meridian Creek Middle School</span></div><span class="chip">We host</span></div>
+      <div class="sched-row"><span class="date">JAN 30</span><div class="what"><b>League Meet 4 — Qualifiers</b><span>Meridian Creek Middle School</span></div><span class="chip">We host</span></div>
+      <div class="sched-row"><span class="date">FEB 13–14</span><div class="what"><b>Spark Invitational</b><span>Location TBD</span></div><span class="chip out">Invite</span></div>
+      <div class="sched-row"><span class="date">FEB 27–28</span><div class="what"><b>FTC State Championships</b><span>Location TBD</span></div><span class="chip out">The goal</span></div>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="sec-head">
+      <span class="label">Rookie year, real engineering</span>
+      <h2>How the herd works</h2>
+    </div>
+    <div class="creed">
+      <div class="creed-card"><span class="label">Build</span><p><b>Iterate loudly, lose quietly, learn fast.</b> The robot that breaks in October is the robot that wins in February.</p></div>
+      <div class="creed-card"><span class="label">Compete</span><p><b>Gracious Professionalism&reg;, ungracious effort.</b> We'll lend you our last spare motor — then try to out-score you with a worse one.</p></div>
+      <div class="creed-card"><span class="label">Document</span><p><b>The portfolio is the robot.</b> Every decision logged, every failure autopsied. Judges, bring coffee.</p></div>
+    </div>
+  </section>
+
+  <section id="sponsors">
+    <div class="sponsor">
+      <div>
+        <h2>Bet on the <span>long shot</span>, before the odds change.</h2>
+        <p>Your sponsorship buys motors, metal, and competition fees for a rookie team of
+           Wilsonville middle schoolers — and puts your name on the robot, the pit, and the
+           jerseys at every event we attend.</p>
+        <div class="actions"><a class="cta" href="mailto:{{ site.email }}?subject=DarkHorse%20Robotics%20sponsorship">Become a sponsor</a><a class="cta ghost" href="mailto:{{ site.email }}?subject=Sponsor%20packet%20request">Request sponsor packet</a></div>
+      </div>
+      <div class="tiers">
+        <div class="tier"><b>Queen Bee</b><span>$1,000+</span></div>
+        <div class="tier"><b>Stallion</b><span>$500</span></div>
+        <div class="tier"><b>Worker Bee</b><span>$250</span></div>
+        <div class="tier"><b>Friend of the herd</b><span>Any</span></div>
+      </div>
+    </div>
+  </section>
+</main>

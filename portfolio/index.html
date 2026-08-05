@@ -1,0 +1,19 @@
+---
+layout: shell
+title: Engineering Portfolio
+---
+<main class="article-wrap">
+  <header>
+    <span class="article-meta">DarkHorse Robotics</span>
+    <h1>Engineering portfolio</h1>
+  </header>
+  <ul class="post-list" style="margin-top:2rem">
+    {% assign entries = site.portfolio | sort: "date" | reverse %}
+    {% for entry in entries %}
+    <li>
+      <time datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date: "%b %-d, %Y" }}</time>
+      <a href="{{ entry.url }}">{{ entry.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</main>

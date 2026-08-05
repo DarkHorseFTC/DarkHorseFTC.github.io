@@ -1,0 +1,33 @@
+title: DarkHorse Robotics
+description: >-
+  DarkHorse Robotics — FIRST Tech Challenge team at Meridian Creek Middle School,
+  Wilsonville, Oregon. BIOBUZZ 2026-27 season.
+url: "https://darkhorseftc.github.io"
+
+# INTERIM contact address — replace with the team email when it exists.
+# Every mailto: on the site reads this one value.
+email: guy@guyewhite.com
+
+markdown: kramdown
+
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: portfolio-entry
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

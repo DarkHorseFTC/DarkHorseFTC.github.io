@@ -1,0 +1,18 @@
+---
+layout: shell
+title: Team Log
+---
+<main class="article-wrap">
+  <header>
+    <span class="article-meta">DarkHorse Robotics</span>
+    <h1>Team log</h1>
+  </header>
+  <ul class="post-list" style="margin-top:2rem">
+    {% for post in site.posts %}
+    <li>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</main>
