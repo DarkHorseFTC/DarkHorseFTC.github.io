@@ -76,12 +76,19 @@
     padding: 1.1rem 0;
     border-bottom: 1px solid var(--hairline);
   }
-  .mark { display: flex; align-items: center; gap: 0.8rem; }
-  .mark img { width: 46px; height: 46px; }
-  .mark span {
+  .mark { display: flex; align-items: center; gap: 0.9rem; }
+  .mark img { width: 54px; height: 54px; }
+  .mark-text { display: flex; flex-direction: column; gap: 0.18rem; }
+  .mark-name {
     font-family: Jost, sans-serif; font-weight: 700;
-    letter-spacing: 0.3em; font-size: 1.02rem;
+    letter-spacing: 0.3em; font-size: 1.02rem; line-height: 1;
   }
+  .mark-sub {
+    font-family: Jost, sans-serif; font-weight: 500;
+    font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold); line-height: 1.35;
+  }
+  @media (max-width: 480px) { .mark-sub { font-size: 0.53rem; letter-spacing: 0.12em; } }
   nav ul { display: flex; gap: 1.6rem; list-style: none; margin-left: auto; }
   nav ul a {
     color: var(--ink-soft); text-decoration: none;
