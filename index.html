@@ -2,21 +2,49 @@
 layout: shell
 title: DarkHorse Robotics — FIRST Tech Challenge Team 33477
 ---
-<main class="wrap">
-  <div class="hero">
-    <div>
-      <h1>This season, the <span class="hive">hive</span> has a dark&nbsp;horse.</h1>
-      <p class="def"><b>dark horse</b> /noun/ — a competitor about whom little is known, who unexpectedly wins.</p>
-      <div class="actions">
-        <a class="cta" href="#season">Meet BIOBUZZ&trade;</a>
-        <a class="cta ghost" href="#schedule">Season schedule</a>
-      </div>
-    </div>
-    <div class="hero-art">
-      <img src="/assets/img/darkhorse-badge-512.png" alt="DarkHorse Robotics — armored robot horse badge">
+<section class="hero-mega" aria-label="DarkHorse Robotics">
+  <div class="hm-stage" aria-hidden="true">
+    <div class="hm-rings"></div>
+    <div class="hm-horse">
+      <img src="/assets/img/darkhorse-head-flare.png" alt="">
+      <span class="hm-beam"></span>
+      <span class="hm-eye"></span>
     </div>
   </div>
+  <div class="hm-scrim" aria-hidden="true"></div>
+  <div class="hm-copy wrap">
+    <h1>This season, the <span class="hive">hive</span> has a dark&nbsp;horse.</h1>
+    <p class="def"><b>dark horse</b> /noun/ — a competitor about whom little is known, who unexpectedly wins.</p>
+    <div class="actions">
+      <a class="cta" href="#season">Meet BIOBUZZ&trade;</a>
+      <a class="cta ghost" href="#schedule">Season schedule</a>
+    </div>
+  </div>
+  <a class="hm-scroll" href="#season" aria-label="Scroll to season section"><span></span>Scroll</a>
+</section>
+<script>
+  (function () {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!matchMedia('(pointer: fine)').matches) return;
+    var horse = document.querySelector('.hm-horse');
+    var rings = document.querySelector('.hm-rings');
+    var hero = document.querySelector('.hero-mega');
+    if (!horse || !hero) return;
+    hero.addEventListener('pointermove', function (e) {
+      var r = hero.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      horse.style.translate = (x * 10) + 'px ' + (y * 8) + 'px';
+      if (rings) rings.style.translate = (x * -14) + 'px ' + (y * -10) + 'px';
+    });
+    hero.addEventListener('pointerleave', function () {
+      horse.style.translate = '0px 0px';
+      if (rings) rings.style.translate = '0px 0px';
+    });
+  })();
+</script>
 
+<main class="wrap">
   <section id="season">
     <div class="sec-head">
       <span class="label">The 2026–27 Game</span>

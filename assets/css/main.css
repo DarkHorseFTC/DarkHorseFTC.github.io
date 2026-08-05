@@ -157,35 +157,100 @@
   .cta.ghost { background: transparent; color: var(--ink); border-color: var(--hairline); }
   .cta.ghost:hover, .cta.ghost:focus-visible { border-color: var(--honey); color: var(--honey); }
 
-  /* hero */
-  .hero {
-    display: grid; grid-template-columns: 1.15fr 0.85fr;
-    gap: 3rem; align-items: center;
-    padding: 4.5rem 0 5rem;
+  /* ---- cinematic full-viewport hero ---- */
+  .hero-mega {
+    position: relative; overflow: hidden;
+    min-height: clamp(560px, 92vh, 1040px);
+    display: flex; align-items: center;
+    border-bottom: 1px solid var(--hairline);
   }
-  @media (max-width: 800px) { .hero { grid-template-columns: 1fr; text-align: center; }
-    .hero .actions { justify-content: center; } .hero-art { order: -1; } }
-  .hero h1 {
-    font-family: Fredoka, sans-serif; font-weight: 600;
-    font-size: clamp(2.4rem, 5.6vw, 4.1rem);
-    line-height: 1.04; letter-spacing: 0.01em;
-  }
-  .hero h1 .hive { color: var(--honey); }
-  .hero .def {
-    margin-top: 1.4rem; max-width: 34rem;
-    color: var(--ink-soft); font-size: 1.02rem; font-style: italic;
-  }
-  .hero .def b { color: var(--ink); font-style: normal; }
-  .actions { display: flex; gap: 0.9rem; margin-top: 2.1rem; flex-wrap: wrap; }
-  .hero-art { position: relative; display: flex; justify-content: center; }
-  .hero-art::before {
-    content: ""; position: absolute; inset: -12%;
-    background:
-      radial-gradient(circle, rgba(247,227,38,0.16) 0%, transparent 62%),
-      repeating-radial-gradient(circle, transparent 0 54px, rgba(187,161,62,0.13) 54px 55px, transparent 55px 110px);
+  .hm-stage { position: absolute; inset: 0; }
+  .hm-rings {
+    position: absolute; top: 50%; right: -12vmin;
+    width: 150vmin; height: 150vmin; margin-top: -75vmin;
     border-radius: 50%;
+    background:
+      radial-gradient(circle, rgba(247,227,38,0.17) 0%, transparent 58%),
+      repeating-radial-gradient(circle, transparent 0 8vmin, rgba(247,227,38,0.09) 8vmin 8.25vmin);
+    will-change: translate;
   }
-  .hero-art img { width: min(360px, 78vw); position: relative; filter: drop-shadow(0 24px 44px rgba(0,0,0,0.5)); }
+  .hm-horse {
+    position: absolute; right: -4%; bottom: -14%;
+    height: 118%; aspect-ratio: 0.8652;
+    will-change: translate;
+  }
+  .hm-horse img {
+    width: 100%; height: 100%; object-fit: contain;
+    filter: drop-shadow(0 34px 70px rgba(3, 8, 20, 0.65));
+  }
+  /* the eye's beam, firing across the viewport; anchored to the eye (80.4%, 33%) */
+  .hm-beam {
+    position: absolute; top: 33%; right: 19.6%; left: -120vw; height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255,59,46,0.10) 30%, rgba(255,59,46,0.8));
+    transform-origin: right center;
+    opacity: 0.55;
+  }
+  .hm-eye {
+    position: absolute; top: 33%; left: 80.4%;
+    width: 9vmin; height: 9vmin; margin: -4.5vmin 0 0 -4.5vmin;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,59,46,0.5), transparent 65%);
+    opacity: 0.7;
+  }
+  .hm-scrim {
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(90deg, var(--ground) 8%, rgba(13,27,51,0.82) 34%, transparent 66%);
+  }
+  .hm-copy { position: relative; z-index: 2; width: 100%; padding-top: 2rem; padding-bottom: 4rem; }
+  .hm-copy h1 {
+    font-family: Fredoka, sans-serif; font-weight: 600;
+    font-size: clamp(2.7rem, 7.2vw, 5.9rem);
+    line-height: 1.0; letter-spacing: 0.005em;
+    max-width: 13ch;
+    text-shadow: 0 10px 44px rgba(3, 8, 20, 0.85);
+  }
+  .hm-copy h1 .hive { color: var(--honey); }
+  .hm-copy .def {
+    margin-top: 1.6rem; max-width: 30rem;
+    color: var(--ink-soft); font-size: 1.05rem; font-style: italic;
+    text-shadow: 0 4px 22px rgba(3, 8, 20, 0.9);
+  }
+  .hm-copy .def b { color: var(--ink); font-style: normal; }
+  .actions { display: flex; gap: 0.9rem; margin-top: 2.1rem; flex-wrap: wrap; }
+  .hm-scroll {
+    position: absolute; z-index: 2; left: 50%; bottom: 1.4rem;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.45rem;
+    font-family: Jost, sans-serif; font-weight: 700; font-size: 0.62rem;
+    letter-spacing: 0.34em; text-transform: uppercase;
+    color: var(--gold); text-decoration: none;
+  }
+  .hm-scroll span {
+    width: 0.7rem; height: 0.8rem; background: var(--honey);
+    clip-path: polygon(50% 100%, 100% 25%, 50% 45%, 0 25%);
+  }
+  .hm-scroll:hover, .hm-scroll:focus-visible { color: var(--honey); outline: none; }
+  @media (prefers-reduced-motion: no-preference) {
+    .hm-rings { animation: hmRings 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+    .hm-horse { animation: hmHorse 1s cubic-bezier(0.2, 0.7, 0.2, 1) both 0.15s; }
+    .hm-beam { animation: hmBeam 1.1s cubic-bezier(0.7, 0, 0.2, 1) both 0.95s; }
+    .hm-eye { animation: hmEye 3.4s ease-in-out 2.1s infinite alternate; }
+    .hm-copy > * { animation: rise 0.8s ease both 0.35s; }
+    .hm-copy .def { animation-delay: 0.5s; }
+    .hm-copy .actions { animation-delay: 0.65s; }
+    .hm-scroll span { animation: hmNudge 2.2s ease-in-out infinite; }
+    @keyframes hmRings { from { opacity: 0; scale: 0.86; } to { opacity: 1; scale: 1; } }
+    @keyframes hmHorse { from { opacity: 0; transform: translateX(6%) scale(1.04); } to { opacity: 1; transform: none; } }
+    @keyframes hmBeam { 0% { transform: scaleX(0); opacity: 0; } 35% { opacity: 1; } 100% { transform: scaleX(1); opacity: 0.55; } }
+    @keyframes hmEye { from { opacity: 0.55; } to { opacity: 1; } }
+    @keyframes hmNudge { 0%, 100% { translate: 0 0; } 50% { translate: 0 5px; } }
+  }
+  @media (max-width: 820px) {
+    .hero-mega { min-height: clamp(520px, 86vh, 820px); }
+    .hm-horse { right: -32%; height: 92%; bottom: -8%; opacity: 0.92; }
+    .hm-scrim { background: linear-gradient(90deg, var(--ground) 4%, rgba(13,27,51,0.86) 46%, rgba(13,27,51,0.25) 100%); }
+    .hm-copy h1 { font-size: clamp(2.5rem, 11vw, 3.6rem); }
+  }
 
   /* sections */
   section { padding: 4.2rem 0; border-top: 1px solid var(--hairline); }
