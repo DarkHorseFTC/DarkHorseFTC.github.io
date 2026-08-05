@@ -177,7 +177,7 @@
     will-change: translate;
   }
   .hm-horse {
-    position: absolute; right: -3vw; bottom: -12vh;
+    position: absolute; right: -1vw; bottom: -12vh;
     height: 106vh; width: calc(106vh * 0.8652);
     will-change: translate;
   }
@@ -249,7 +249,7 @@
   }
   @media (max-width: 820px) {
     .hero-mega { min-height: clamp(520px, 86vh, 820px); }
-    .hm-horse { right: -16vw; height: 68vh; width: calc(68vh * 0.8652); bottom: -5vh; opacity: 0.92; }
+    .hm-horse { right: -8vw; height: 60vh; width: calc(60vh * 0.8652); bottom: -4vh; opacity: 0.95; }
     .hm-scrim { background: linear-gradient(90deg, var(--ground) 4%, rgba(13,27,51,0.86) 46%, rgba(13,27,51,0.25) 100%); }
     .hm-copy h1 { font-size: clamp(2.5rem, 11vw, 3.6rem); }
   }
