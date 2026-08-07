@@ -4,9 +4,8 @@ description: >-
   Wilsonville, Oregon. BIOBUZZ 2026-27 season.
 url: "https://mcmsrobotics.org"
 
-# INTERIM contact address — replace with the team email when it exists.
 # Every mailto: on the site reads this one value.
-email: guy@guyewhite.com
+email: coach@mcmsrobotics.org
 
 markdown: kramdown
 
