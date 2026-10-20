@@ -1,11 +1,16 @@
 ---
 layout: shell
-title: DarkHorse Robotics — FIRST Tech Challenge Team 33477
+title: MCMS Robotics — FTC 33477 & 33744
 ---
-<section class="hero-mega" aria-label="DarkHorse Robotics">
+<section class="hero-mega" aria-label="Meridian Creek Middle School Robotics">
   <div class="hm-stage" aria-hidden="true">
     <div class="hm-rings"></div>
-    <div class="hm-horse">
+    <div class="hm-horse hm-left">
+      <img src="/assets/img/mechamustang-head.webp" alt="">
+      <span class="hm-beam"></span>
+      <span class="hm-eye"></span>
+    </div>
+    <div class="hm-horse hm-right">
       <img src="/assets/img/darkhorse-head-flare.webp" alt="">
       <span class="hm-beam"></span>
       <span class="hm-eye"></span>
@@ -26,25 +31,51 @@ title: DarkHorse Robotics — FIRST Tech Challenge Team 33477
   (function () {
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     if (!matchMedia('(pointer: fine)').matches) return;
-    var horse = document.querySelector('.hm-horse');
+    var horses = document.querySelectorAll('.hm-horse');
     var rings = document.querySelector('.hm-rings');
     var hero = document.querySelector('.hero-mega');
-    if (!horse || !hero) return;
+    if (!horses.length || !hero) return;
     hero.addEventListener('pointermove', function (e) {
       var r = hero.getBoundingClientRect();
       var x = (e.clientX - r.left) / r.width - 0.5;
       var y = (e.clientY - r.top) / r.height - 0.5;
-      horse.style.translate = (x * 10) + 'px ' + (y * 8) + 'px';
+      horses.forEach(function (h, i) { var d = i === 0 ? -1 : 1; h.style.translate = (x * 10 * d) + 'px ' + (y * 8) + 'px'; });
       if (rings) rings.style.translate = (x * -14) + 'px ' + (y * -10) + 'px';
     });
     hero.addEventListener('pointerleave', function () {
-      horse.style.translate = '0px 0px';
+      horses.forEach(function (h) { h.style.translate = '0px 0px'; });
       if (rings) rings.style.translate = '0px 0px';
     });
   })();
 </script>
 
 <main class="wrap">
+  <section id="teams">
+    <div class="sec-head">
+      <span class="label">One program, two teams</span>
+      <h2>Meet the herd</h2>
+    </div>
+    <div class="teams">
+      <div class="team-card">
+        <img src="/assets/img/darkhorse-badge-512.png" alt="Dark Horse badge">
+        <div>
+          <span class="label">FIRST&reg; Tech Challenge Team 33477</span>
+          <h3>Dark Horse</h3>
+          <p>The original herd — rookie year, first out of the gate. A competitor about whom little is known, whose hard-earned talent surprises everyone.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="/assets/img/mechamustang-badge-512.png" alt="MechaMustang badge">
+        <div>
+          <span class="label">FIRST&reg; Tech Challenge Team 33744</span>
+          <h3>MechaMustang</h3>
+          <p>Our second team, built side by side with the first. Same gym, same coaches, same BIOBUZZ field — twice the robots, twice the ideas.</p>
+        </div>
+      </div>
+    </div>
+    <p class="teams-note">Both teams are Meridian Creek Middle School students in grades 6–8. They practice together, share parts and know-how, and compete at the same league meets — as two alliances-in-waiting from one school.</p>
+  </section>
+
   <section id="season">
     <div class="sec-head">
       <span class="label">The 2026–27 Game</span>
@@ -60,7 +91,7 @@ title: DarkHorse Robotics — FIRST Tech Challenge Team 33477
            and score <b style="color:var(--ink)">Pollen</b>, and the swarm that works together sweetest, wins.</p>
         <div class="hex-facts">
           <div class="hex-fact"><span class="hex"></span><div><b>Reveal: Sept 12, 8 AM.</b> <span>We watch the broadcast together, then read the manual the same day.</span></div></div>
-          <div class="hex-fact"><span class="hex"></span><div><b>Robot from scratch.</b> <span>Designed, built, and programmed in Java by 6th–8th graders.</span></div></div>
+          <div class="hex-fact"><span class="hex"></span><div><b>Two robots from scratch.</b> <span>Each team designs, builds, and programs its own, in Java, by 6th–8th graders.</span></div></div>
           <div class="hex-fact"><span class="hex"></span><div><b>Home field.</b> <span>League meets run in the Meridian Creek gym — come watch.</span></div></div>
         </div>
       </div>
@@ -101,11 +132,11 @@ title: DarkHorse Robotics — FIRST Tech Challenge Team 33477
     <div class="sponsor">
       <div>
         <h2>Inspire the <span>next generation</span> of engineers — right here in Wilsonville.</h2>
-        <p>Your sponsorship buys motors, metal, and competition fees for a rookie team of
+        <p>Your sponsorship buys motors, metal, and competition fees for two rookie teams of
            Wilsonville middle schoolers — and it buys something bigger: the skills, confidence,
            and belonging that turn curious kids into tomorrow's builders. Your name rides with
-           us on the robot, the pit, and the jerseys at every event.</p>
-        <div class="actions"><a class="cta" href="mailto:{{ site.email }}?subject=DarkHorse%20Robotics%20sponsorship">Become a sponsor</a><a class="cta ghost" href="mailto:{{ site.email }}?subject=Sponsor%20packet%20request">Request sponsor packet</a></div>
+           us on both robots, the pit, and the jerseys at every event.</p>
+        <div class="actions"><a class="cta" href="mailto:{{ site.email }}?subject=MCMS%20Robotics%20sponsorship">Become a sponsor</a><a class="cta ghost" href="mailto:{{ site.email }}?subject=Sponsor%20packet%20request">Request sponsor packet</a></div>
       </div>
       <div class="tiers">
         <div class="tier"><b>Dark Horse</b><span>$1,000+</span></div>

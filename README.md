@@ -1,6 +1,6 @@
 # darkhorseftc.github.io
 
-Team website for DarkHorse Robotics — custom Jekyll theme, built natively by
+Website for Meridian Creek Middle School Robotics (FTC 33477 Dark Horse and 33744 MechaMustang) — custom Jekyll theme, built natively by
 GitHub Pages on every push to `main`. Live at https://darkhorseftc.github.io
 
 ## Coach's guide
